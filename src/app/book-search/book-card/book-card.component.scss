@@ -1,0 +1,16 @@
+.book-card {
+    width: 300px;
+    min-height: 470px;
+}
+
+.cover-img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover-img {
+    width: 100px;
+    height: 160px;
+    object-fit: cover;
+}

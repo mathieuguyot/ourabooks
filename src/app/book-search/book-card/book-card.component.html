@@ -1,0 +1,22 @@
+<mat-card class="book-card">
+    <mat-card-header>
+        <mat-card-title>{{ book.volumeInfo.title }}</mat-card-title>
+        @if(book.volumeInfo.authors) {
+        <mat-card-subtitle>{{ book.volumeInfo.authors.join(", ") }}</mat-card-subtitle>
+        }
+    </mat-card-header>
+    @if(book.volumeInfo.imageLinks){
+    <div class="cover-img-container">
+        <img
+            mat-card-image
+            class="cover-img"
+            src="{{ book.volumeInfo.imageLinks.thumbnail }}"
+            alt="Cover of book {{ book.volumeInfo.title }}"
+        />
+    </div>
+    } @if(book.volumeInfo.description) {
+    <mat-card-content>
+        <app-read-more [text]="book.volumeInfo.description" />
+    </mat-card-content>
+    }
+</mat-card>

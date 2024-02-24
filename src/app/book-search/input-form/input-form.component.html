@@ -1,0 +1,18 @@
+<div class="input-form-container">
+    <mat-form-field appearance="outline" style="margin-bottom: -1.25em">
+        <!-- https://stackoverflow.com/questions/53684763/how-to-remove-space-bottom-mat-form-field -->
+        <mat-label>Book name</mat-label>
+        <input
+            matInput
+            (keypress)="onSearchInputEnterKey($event)"
+            placeholder="The lord of the ring"
+            id="name"
+            type="text"
+            [(ngModel)]="searchText"
+        />
+    </mat-form-field>
+    <button mat-raised-button disabled="{{ fetching }}" (click)="onSearchButtonClick()">
+        <mat-spinner *ngIf="fetching" diameter="20"></mat-spinner>
+        <span *ngIf="!fetching">Search</span>
+    </button>
+</div>

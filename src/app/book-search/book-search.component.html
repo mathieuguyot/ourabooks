@@ -1,0 +1,16 @@
+<input-form (search)="search($event)" [fetching]="fetching" />
+
+<div class="card-grid-container">
+    @for (book of books; track book.id) {
+    <book-card [book]="book"></book-card>
+    }
+</div>
+
+@if(bookSearchService.hasMoreToLoad()) {
+<div class="load-more-button-container">
+    <button mat-raised-button disabled="{{ fetching }}" (click)="loadMore()">
+        <mat-spinner *ngIf="fetching" diameter="20"></mat-spinner>
+        <span *ngIf="!fetching">Load more</span>
+    </button>
+</div>
+}
