@@ -1,0 +1,19 @@
+<div class="sign-up-form-container">
+    Create a new account
+    <mat-form-field appearance="outline" style="margin-bottom: -1.25em">
+        <!-- https://stackoverflow.com/questions/53684763/how-to-remove-space-bottom-mat-form-field -->
+        <mat-label>email</mat-label>
+        <input matInput type="email" [(ngModel)]="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="margin-bottom: -1.25em">
+        <!-- https://stackoverflow.com/questions/53684763/how-to-remove-space-bottom-mat-form-field -->
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="password" />
+    </mat-form-field>
+
+    <button mat-raised-button disabled="{{ fetching }}" (click)="onSignUpButtonClick()">
+        <mat-spinner *ngIf="fetching" diameter="20"></mat-spinner>
+        <span *ngIf="!fetching">Sign up</span>
+    </button>
+</div>

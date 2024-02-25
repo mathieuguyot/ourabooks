@@ -6,16 +6,13 @@ import { provideClientHydration } from "@angular/platform-browser";
 import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
 
 import { provideStore, provideState } from "@ngrx/store";
-import { counterFeature } from "./store/counter.reducer";
-import { provideEffects } from "@ngrx/effects";
-import * as countEffect from "./store/counter.effect";
+import { authFeature } from "./store/auth.reducer";
 
 export const appConfig: ApplicationConfig = {
     providers: [
         provideRouter(routes),
         provideStore(),
-        provideState(counterFeature),
-        provideEffects(countEffect),
+        provideState(authFeature),
         provideClientHydration(),
         provideAnimationsAsync()
     ]

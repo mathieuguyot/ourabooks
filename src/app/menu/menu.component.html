@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" style="margin-bottom: 10px">
+    <mat-toolbar-row>
+        <span>Oura books</span>
+        <span style="flex: 1 1 auto"></span>
+        @if(isLoggedIn$ | async) {
+        <button routerLink="/book-search" mat-button>Search books</button>
+        <button mat-button (click)="signOut()">Logout</button>
+        } @else {
+        <button routerLink="/sign-in" mat-button>Sign in</button>
+        <button routerLink="/sign-up" mat-button>Sign up</button>
+        }
+    </mat-toolbar-row>
+</mat-toolbar>

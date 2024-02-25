@@ -19,17 +19,6 @@ export function app(): express.Express {
 
     // Example Express Rest API endpoints
     //server.get("/api/**", (req, res) => {});
-    console.log("ici");
-    server.get("/api/products", (req, res) => {
-        // Replace this with your actual data retrieval logic
-        const products = [
-            { id: 1, name: "Product 1" },
-            { id: 2, name: "Product 2" }
-        ];
-
-        // Send the products as JSON response
-        res.json(products);
-    });
 
     // Serve static files from /browser
     server.get(
